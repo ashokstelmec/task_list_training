@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  height: 82px;
+  /* border: 3px solid black; */
+  /* font-family: "Helvetica Neue"; */
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: #6c9dce;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+/* .sidebar,
+.task-list {
+  border: 3px solid black;
+} */
+
+.task-list {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.task-list-header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-list-header .title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.task-list-filter select {
+  padding: 7px;
+  border-radius: 7px;
+  border: 1px solid lightgrey;
+  margin-right: 10px;
+}
+
+.task-list-filter .add-task-btn {
+  padding: 7px;
+  border-radius: 7px;
+  font-family: cursive;
+  border: 1px solid lightgrey;
+  cursor: pointer;
+}
+
+.sidebar {
+  height: calc(100vh - 86px);
+  background: #e9e9e9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.active {
+  background: #6c9dce;
+  color: #fff !important;
+}
+
+.normal{
+  color: #6e6e6e;
+  background: #fff;;
+
+}
+
+.search {
+  border: none;
+  border-radius: 1rem;
+  font-size: 1em;
+  outline: none;
+  padding: 1rem;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.filters-wrapper {
+  margin-top: 40px;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-header .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6e6e6e;
+}
+
+.filter-header i {
+  font-size: 20px;
+  color: #6e6e6e;
+}
+
+.filter-btn-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  font-size: 20px;
+  font-family: cursive;
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  color: #6e6e6e;
+  cursor: pointer;
+}
+
+.displaying-data {
+  border: 1px solid gray;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem 1rem;
+  border-radius: 6px;
+}
+
+/* .table-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} */
+
+/* .table-row td {
+  margin-left: 2rem;
+  width: 26%;
+} */
+
+.message-data {
+  /* width: 100% !important; */
+}
+
+.edit-icon {
+  /* margin-right: 6rem; */
+  /* margin-left: 13rem !important; */
+  font-size: 1.1rem;
+}
+
+.delete-icon {
+  font-size: 1.2rem;
+}
+
+/* .creating-date {
+  width: 46% !important;
+  position: relative;
+  left: 20px;
+  margin-left: 3rem !important;
+} */
+
+.customModal {
+  padding: 3rem;
+  width: 35%;
+  border-radius: 7px;
+  padding-right: 1.2rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+.create-task {
+  margin-top: -1.99rem;
+}
+
+.enter-your-message {
+  padding: 0.5rem;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dropdown-1 {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.dropdown-1 select {
+  width: 12rem;
+  height: 2rem;
+  border-radius: 5px;
+}
+
+.date-group {
+  margin-top: 2rem;
+  display: grid;
+  grid-gap: 0.7rem;
+}
+
+.date-group input {
+  height: 40px;
+  border-radius: 5px;
+  border-color: lightgray;
+}
+
+.btn-add-task {
+  padding: 0.5rem 1rem;
+  background-color: #3e82c6;
+  border: none;
+  border-radius: 5px;
+  float: right;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.btn-add-task:hover {
+  cursor: pointer;
+  background-color: #1982ea;
 }
