@@ -60,6 +60,7 @@ const TaskList = () => {
         requestOptions
       );
       const data = await response.json();
+      console.log("Dataa", data?.tasks);
       localStorage.setItem("TASKS", JSON.stringify(data?.tasks));
       setTaskLists(data?.tasks);
     } catch (error) {
@@ -125,6 +126,7 @@ const TaskList = () => {
     e.preventDefault();
     // POST REQUEST TO BACKEND.
     addNewTask();
+    setOpen(false);
   };
 
   return (

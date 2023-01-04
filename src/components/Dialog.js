@@ -25,21 +25,21 @@ const Dialog = ({
           name="message"
           placeholder="Enter Your Message"
           className="enter-your-message"
-          value={task.message}
+          value={task?.message}
           onChange={handleChange}
-        />
+        />  
         <div className="dropdown">
           <div className="dropdown-1">
             <label>Assign To</label>
             <select
               name="assignedTo"
-              value={task.assignedTo}
+              value={task?.assignedTo}
               onChange={handleChange}
             >
               <option value="">Choose User</option>
               {users?.map((user) => (
-                <option value={user.id} key={user.id}>
-                  {user.name}
+                <option value={user?.id} key={user?.id}>
+                  {user?.name}
                 </option>
               ))}
             </select>
@@ -48,7 +48,7 @@ const Dialog = ({
             <label>priority</label>
             <select
               name="priority"
-              value={task.priority}
+              value={task?.priority}
               onChange={handleChange}
             >
               <option value="">Choose Priority</option>
@@ -63,7 +63,7 @@ const Dialog = ({
           <input
             type="date"
             name="dueDate"
-            value={task.dueDate}
+            value={task?.dueDate || ""}
             onChange={handleChange}
           />
         </div>

@@ -24,13 +24,17 @@ const Task = ({ item, handleDelete, getTasksLists, users }) => {
     setTask((oldState) => ({ ...oldState, [e.target.name]: e.target.value }));
   };
 
+  // Update API
   const updateTask = async () => {
+    console.log("Update task");
+
     try {
       const formdata = new FormData();
       formdata.append("message", task.message);
       formdata.append("due_date", task.dueDate);
       formdata.append("priority", task.priority);
       formdata.append("assigned_to", task.assignedTo);
+      formdata.append("taskid", task.id);
 
       const requestOptions = {
         method: "POST",
@@ -42,6 +46,7 @@ const Task = ({ item, handleDelete, getTasksLists, users }) => {
       };
 
       await fetch("https://devza.com/tests/tasks/update", requestOptions);
+
       getTasksLists();
     } catch (error) {
       console.log("Error is ", error);
@@ -52,11 +57,12 @@ const Task = ({ item, handleDelete, getTasksLists, users }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateTask();
+    setOpenModal(false);
   };
 
   return (
     <>
-      {item && (
+      {item ? (
         <tr className="table-row">
           <td className="message-data">{item.message}</td>
           <td className="message-name">{item.assigned_name}</td>
@@ -69,6 +75,8 @@ const Task = ({ item, handleDelete, getTasksLists, users }) => {
             <MdOutlineDelete onClick={() => handleDelete(item.id)} />
           </td>
         </tr>
+      ) : (
+        "Nothing to Display"
       )}
 
       <Dialog
