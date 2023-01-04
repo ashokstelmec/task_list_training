@@ -6,8 +6,6 @@
 
 header {
   height: 82px;
-  /* border: 3px solid black; */
-  /* font-family: "Helvetica Neue"; */
   font-size: 30px;
   font-weight: 700;
   font-style: italic;
@@ -130,32 +128,35 @@ header {
 }
 
 .displaying-data {
-  border: 1px solid gray;
-  margin-top: 1rem;
   width: 100%;
-  padding: 1rem 1rem;
-  border-radius: 6px;
 }
 
-/* .table-row {
+.table-row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-} */
+  border: 1px solid gray;
+  border-radius: 6px;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
 
-/* .table-row td {
-  margin-left: 2rem;
-  width: 26%;
-} */
-
-.message-data {
-  /* width: 100% !important; */
 }
 
+
+.table-row td {
+  /* margin-left: 2rem; */
+  width: 15%;
+}
+
+/* .message-data {
+  width: 25% !important;
+} */
+
 .edit-icon {
-  /* margin-right: 6rem; */
-  /* margin-left: 13rem !important; */
   font-size: 1.1rem;
+  /* position: relative; */
+  /* left: 80px; */
+  padding-left: 3rem;
 }
 
 .delete-icon {
@@ -164,8 +165,6 @@ header {
 
 /* .creating-date {
   width: 46% !important;
-  position: relative;
-  left: 20px;
   margin-left: 3rem !important;
 } */
 
@@ -233,4 +232,8 @@ header {
 .btn-add-task:hover {
   cursor: pointer;
   background-color: #1982ea;
+}
+
+.message-name{
+  margin-left: 4rem;
 }

@@ -48,7 +48,7 @@ const Task = ({ item, handleDelete, getTasksLists, users }) => {
     }
   };
 
-  // This fn will edit or update in backend
+  // This function will edit or update in backend
   const handleSubmit = (e) => {
     e.preventDefault();
     updateTask();
@@ -59,7 +59,7 @@ const Task = ({ item, handleDelete, getTasksLists, users }) => {
       {item && (
         <tr className="table-row">
           <td className="message-data">{item.message}</td>
-          <td>{item.assigned_name}</td>
+          <td className="message-name">{item.assigned_name}</td>
           <td>{item.priority}</td>
           <td className="creating-date">{item.created_on}</td>
           <td className="edit-icon">
